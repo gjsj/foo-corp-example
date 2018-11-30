@@ -1,10 +1,11 @@
 kind: Sync
 apiVersion: nomos.dev/v1alpha1
 metadata:
-  name: defaultdeployment
+  name: deployments
 spec:
   groups:
-  - kinds:
+  - group: apps
+    kinds:
     - kind: Deployment
       versions:
       - version: v1
