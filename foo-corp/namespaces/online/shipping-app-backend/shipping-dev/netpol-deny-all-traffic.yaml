@@ -1,0 +1,48 @@
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: default-deny-all
+#  namespace: default
+spec:
+  # Select all pods in this namespace
+  podSelector: {}
+  # Block all ingress on each pod
+  ingress: []
+  # Block all egress on each pod
+  policyTypes:
+  - Ingress
+  - Egress
+  egress: []
+
+# By default, there is no policy. Once you enable one,
+# all traffic is disabled except the whitelisted traffic.
+# Does this mean that I don't have to select all pods here
+# as long as there is some other policy that selects them?
+
+# Adding the egress policy here "fixed" the problem. Why?
+# It actually didn't fix it, it enabled ingress accidentally because
+# of API confusion. The real fix is for you to have both an Egress
+# AND a corresponding Ingress rule for any pod-to-pod communication.
+
+# Why is the format for ingress and egress policy different?
+# It's not, there's some confusion about Ingress/Egress documentation
+# See this page:
+# https://github.com/kubernetes/api/blob/master/networking/v1/types.go
+
+# How to debug network policies? Trial-and-error
+# - What does kubectl logs -f show?
+# - Can I do syslog after ssh in a pod?
+
+# What other tutorials/examples should I run through?
+# Ahmet's are best
+
+# What is your role on the team? What products/projects do you work on?
+# There's a lot here, schedule a follow up
+
+# If you were a developer customer, would you use network policies? Why or why not?
+# - What kinds of bugs do you see for network policy?
+# Debugging is basically non-existent
+# Lack of awareness/need of security - you have to pay extra to run Calico on your instance
+
+# Easy way to connect to GKE cluster from different kubectl installations?
+
