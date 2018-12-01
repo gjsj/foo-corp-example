@@ -7,6 +7,5 @@ spec:
   - group: apps
     kinds:
     - kind: Deployment
-      hierarchyMode: inherit
       versions:
       - version: v1

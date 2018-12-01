@@ -6,6 +6,5 @@ spec:
   groups:
   - kinds:
     - kind: Service
-      hierarchyMode: inherit
       versions:
       - version: v1

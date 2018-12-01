@@ -7,6 +7,5 @@ spec:
   - group: networking.k8s.io
     kinds:
     - kind: NetworkPolicy
-      hierarchyMode: inherit
       versions:
       - version: v1
