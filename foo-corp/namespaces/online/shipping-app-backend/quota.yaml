@@ -1,10 +1,10 @@
-kind: ResourceQuota
-apiVersion: v1
-metadata:
-  name: quota
-spec:
-  hard:
-    pods: "100"
-    cpu: "4"
-    memory: 4Gi
-
+#kind: ResourceQuota
+#apiVersion: v1
+#metadata:
+#  name: quota
+#spec:
+#  hard:
+#    pods: "100"
+#    cpu: "4"
+#    memory: 4Gi
+#
