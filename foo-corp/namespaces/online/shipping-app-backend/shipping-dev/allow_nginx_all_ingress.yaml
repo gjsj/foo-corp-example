@@ -7,5 +7,6 @@ spec:
     matchLabels:
       app: nginx
   ingress:
-  - from:
-    - podSelector: {}
+  - {}
+  policyTypes:
+  - Ingress
