@@ -1,13 +1,15 @@
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
-  name: deny-access-nginx
+  name: allow-all-nginx
 spec:
   podSelector:
     matchLabels:
       app: nginx
   ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          access: "true"
+  - {}
+  egress:
+  - {}
+  policyTypes:
+  - Ingress
+  - Egress
