@@ -1,13 +1,6 @@
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
-  name: shipping-backend-nginx
+  name: default-deny-all-traffic
 spec:
-  podSelector:
-    matchLabels:
-      app: nginx
-  ingress:
-  - from:
-    - podSelector:
-        matchLabels:
-          access: "true"
+  podSelector: {}

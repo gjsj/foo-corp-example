@@ -1,15 +1,10 @@
 kind: NetworkPolicy
 apiVersion: networking.k8s.io/v1
 metadata:
-  name: shipping-dev-nginx
+  name: allow-nginx-ingress
 spec:
   podSelector:
     matchLabels:
       app: nginx
   ingress:
   - {}
-  egress:
-  - {}
-  policyTypes:
-  - Ingress
-  - Egress
